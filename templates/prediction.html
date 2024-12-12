@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link href="static/icons8-facebook-ios-16-filled-32.png" rel="icon">
+    <link href="static/icons8-facebook-ios-16-filled-96.png" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Prediction - Fake News Detection</title>
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto p-4 flex justify-between items-center">
+        <a class="flex items-center text-gray-900">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+          <span class="ml-3 text-2xl font-bold">Fake News Detection</span>
+        </a>
+        <nav class="flex space-x-4 text-lg">
+          <a href="/" class="text-gray-700 hover:text-green-500">Home</a>
+          <a href="/predict" class="text-gray-700 hover:text-green-500">Prediction</a>
+          <a href="/about" class="text-gray-700 hover:text-green-500">About</a>
+          <a href="/contact" class="text-gray-700 hover:text-green-500">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto my-12">
+      <section class="text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Fake News Prediction</h1>
+        <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+          Enter the news headline below to verify its authenticity using our advanced machine learning model.
+        </p>
+      </section>
+      <section class="bg-white p-8 rounded-lg shadow-md max-w-lg mx-auto">
+        <form action="/predict" method="POST">
+          <div class="mb-4">
+            <label for="news" class="block text-gray-700 font-semibold mb-2">Enter News Headline:</label>
+            <input type="text" id="news" name="news" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Type your headline here...">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow hover:bg-green-600">Predict</button>
+          </div>
+        </form>
+      </section>
+      <section class="mt-12">
+        <div class="text-center">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">Prediction Result</h2>
+          <p class="text-lg text-green-600 font-semibold">{{prediction_text}}</p>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Fake News Detection. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  </body>
+</html>
